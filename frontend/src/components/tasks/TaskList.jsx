@@ -27,8 +27,11 @@ function TaskList() {
 
   const fetchUserProjects = async () => {
     try {
-      const { data } = await axios.get('/api/projects/user');
+      const { data } = await axios.get('/api/projects/users', {
+        params: { user: currentUser._id },
+      });
       setUserProjects(data);
+      console.log('Project related to user:', data);
     } catch (err) {
       console.log(err);
     }
@@ -38,15 +41,16 @@ function TaskList() {
     try {
       const { data } = await axios.get('/api/users/me');
       setCurrentUser(data);
+      console.log('Current User:', data);
     } catch (err) {
       console.log(err);
     }
   };
 
   useEffect(() => {
-    getTasks();
-    fetchUserProjects();
     fetchCurrentUser();
+    fetchUserProjects();
+    getTasks();
   }, []);
 
   const addNewButtonClick = () => {

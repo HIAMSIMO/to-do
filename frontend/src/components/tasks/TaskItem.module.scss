@@ -3,18 +3,29 @@
 	margin-top: 0.5rem;
 	border-radius: 6px;
 	font-size: 1.5rem;
+
 	&:hover {
 		background-color: rgba(95, 95, 95, 0.2);
 	}
+
 	td {
-		padding: 0.3rem;
+		padding: 0.5rem; 
+
+		&:nth-child(4),
+		&:nth-child(5) {
+
+			font-weight: bold;
+			color: #333; 
+		}
 	}
+
 	.task_name {
 		max-width: 200px;
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
 		gap: 0.5rem;
+
 		.checkbox {
 			width: 3rem;
 			height: 3rem;
@@ -24,17 +35,21 @@
 			border-radius: 50%;
 			transition: 0.3s ease background-color;
 			cursor: pointer;
+
 			& input {
 				width: 1.7rem;
 				height: 1.7rem;
 				cursor: pointer;
 			}
+
 			&:hover {
 				background-color: rgba(128, 128, 128, 0.2);
 			}
 		}
+
 		p {
 			width: calc(100% - 3rem);
+			overflow-wrap: break-word; 
 		}
 	}
 }
@@ -48,6 +63,7 @@
 	border-radius: 50px;
 	cursor: pointer;
 	transition: 0.3s ease background-color, 0.3s ease color;
+
 	&:hover {
 		background-color: rgb(142, 13, 39);
 		color: rgb(205, 205, 205);

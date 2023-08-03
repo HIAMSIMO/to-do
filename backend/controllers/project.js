@@ -59,6 +59,7 @@ export const getAllProjects = async (req, res, next) => {
 
 export const getUserProjects = async (req, res, next) => {
   try {
+    const { user } = req.query;
     const projects = await Project.find({ users: req.body.user });
     return res.status(200).json(projects);
   } catch (err) {
