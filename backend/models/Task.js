@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const {Schema} = mongoose;
 
@@ -15,7 +15,7 @@ const taskSchema = new Schema({
         type: Number,
         required: true,
     },
-    status: {
+    completed: {
         type: Boolean,
         required: false,
         default:false,

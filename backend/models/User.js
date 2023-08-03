@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const {Schema} = mongoose;
 
@@ -18,7 +18,7 @@ const userSchema = new Schema({
     },
     role :{
         type: String,
-        anum:['user','admin'],
+        enum:['user','admin'],
         default:'user',
 
     },
