@@ -35,5 +35,6 @@ module.exports = {
     'no-console': 0,
     'react/react-in-jsx-scope': 0,
     'react/prop-types': 0,
+    'no-else-return': 0,
   },
 };

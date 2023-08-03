@@ -9,13 +9,12 @@
 	}
 
 	td {
-		padding: 0.5rem; 
+		padding: 0.5rem;
 
 		&:nth-child(4),
 		&:nth-child(5) {
-
 			font-weight: bold;
-			color: #333; 
+			color: #333;
 		}
 	}
 
@@ -26,30 +25,9 @@
 		justify-content: flex-start;
 		gap: 0.5rem;
 
-		.checkbox {
-			width: 3rem;
-			height: 3rem;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			border-radius: 50%;
-			transition: 0.3s ease background-color;
-			cursor: pointer;
-
-			& input {
-				width: 1.7rem;
-				height: 1.7rem;
-				cursor: pointer;
-			}
-
-			&:hover {
-				background-color: rgba(128, 128, 128, 0.2);
-			}
-		}
-
 		p {
 			width: calc(100% - 3rem);
-			overflow-wrap: break-word; 
+			overflow-wrap: break-word;
 		}
 	}
 }
@@ -67,5 +45,41 @@
 	&:hover {
 		background-color: rgb(142, 13, 39);
 		color: rgb(205, 205, 205);
+	}
+}
+
+.addUsers {
+	margin-left: 50px;
+	display: inline-block;
+	border: 2px solid rgb(0, 0, 0);
+	padding: 0.5rem 1.5rem;
+	font-size: 1.6rem;
+	color: rgb(31, 72, 13);
+	border-radius: 50px;
+	cursor: pointer;
+	transition: 0.3s ease background-color, 0.3s ease color;
+
+	&:hover {
+		background-color: rgb(66, 170, 83);
+		color: rgb(205, 205, 205);
+	}
+}
+
+.allUsers {
+	align-items: center;
+	width: 30%;
+	padding: 0.5rem;
+	border-radius: 5px;
+	font-size: 1.8rem;
+	color: black;
+	background-color: #bbbbbb;
+
+	&:focus {
+		outline: none;
+	}
+
+	option {
+		font-size: 1.6rem;
+		border: black 1px;
 	}
 }

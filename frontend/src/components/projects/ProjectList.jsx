@@ -15,6 +15,7 @@ function ProjectList() {
   const getProjects = async () => {
     try {
       const { data } = await axios.get('/api/projects/all');
+      console.log('all Projects:', data); // check if there is any data
       setProjectList(data);
     } catch (err) {
       console.log(err);
@@ -37,6 +38,7 @@ function ProjectList() {
     try {
       const { data } = await axios.get('/api/users/all');
       setAllUsers(data);
+      console.log('user Projects:', data); // check if there is any data
     } catch (err) {
       console.log(err);
     }
@@ -67,9 +69,8 @@ function ProjectList() {
     setNewProject((prevProject) => {
       if (prevProject.users.includes(userId)) {
         return { ...prevProject, users: prevProject.users.filter((id) => id !== userId) };
-      } else {
-        return { ...prevProject, users: [...prevProject.users, userId] };
       }
+      return { ...prevProject, users: [...prevProject.users, userId] };
     });
   };
 

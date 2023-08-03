@@ -21,6 +21,7 @@ function PrivateRoutes() {
       <Outlet />
       {isAdmin && (
         <>
+          <Route path="/" element={<Overview />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/overview" element={<Overview />} />
           <Route path="/addUser" element={<AddUser />} />

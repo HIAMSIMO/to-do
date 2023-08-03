@@ -11,8 +11,9 @@ function ProjectItem({ project, deleteProject, users }) {
     setSelectedUsers((prevSelectedUsers) => {
       if (prevSelectedUsers.includes(userId)) {
         return prevSelectedUsers.filter((id) => id !== userId);
+      } else {
+        return [...prevSelectedUsers, userId];
       }
-      return [...prevSelectedUsers, userId];
     });
   };
 
@@ -43,6 +44,7 @@ function ProjectItem({ project, deleteProject, users }) {
       <td className={classes.project_description}>{project.description}</td>
       <td>
         <select
+          className={classes.allUsers}
           multiple
           value={selectedUsers}
           onChange={(e) => handleCheckboxChange(e.target.value)}
@@ -53,7 +55,7 @@ function ProjectItem({ project, deleteProject, users }) {
             </option>
           ))}
         </select>
-        <button type="button" onClick={() => handleAddUsers(project._id)}>Add Users</button>
+        <button type="button" className={classes.addUsers} onClick={() => handleAddUsers(project._id)}>Add Users</button>
       </td>
       <td className={classes.project_timespent}>
         {project.timespent}

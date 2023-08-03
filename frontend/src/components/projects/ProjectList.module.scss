@@ -49,6 +49,40 @@
 			color: rgb(205, 205, 205);
 		}
 	}
+	select {
+		width: 30%;
+		padding: 0.5rem;
+
+		border-radius: 5px;
+		font-size: 1.8rem;
+		color: black;
+		background-color: #bbbbbb;
+
+		&:focus {
+			outline: none;
+		}
+
+		option {
+			font-size: 1.6rem;
+			border: black 1px;
+		}
+	}
+	textarea {
+		width: 50%;
+		padding: 0.5rem;
+		border: none;
+		border-radius: 5px;
+		font-size: 1.8rem;
+		color: black;
+		background-color: #bbbbbb;
+
+		min-height: 120px;
+		padding: 1rem;
+
+		&:focus {
+			outline: none;
+		}
+	}
 }
 .projectList_table {
 	width: 100%;
