@@ -10,13 +10,34 @@ function TaskList() {
   const [taskList, setTaskList] = useState([]);
   const [isAddingNew, setIsAddingNew] = useState(false);
   const [newTask, setNewTask] = useState('');
+  const [timeSpent, setTimeSpent] = useState(0);
+  const [selectedProject, setSelectedProject] = useState('');
+  const [description, setDescription] = useState('');
+  const [userProjects, setUserProjects] = useState([]);
+  const [currentUser, setCurrentUser] = useState(null);
 
   const getTasks = async () => {
     try {
       const { data } = await axios.get('/api/tasks/mytasks');
-      setTaskList(
-        data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)),
-      );
+      setTaskList(data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const fetchUserProjects = async () => {
+    try {
+      const { data } = await axios.get('/api/projects/user');
+      setUserProjects(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const fetchCurrentUser = async () => {
+    try {
+      const { data } = await axios.get('/api/users/me');
+      setCurrentUser(data);
     } catch (err) {
       console.log(err);
     }
@@ -24,6 +45,8 @@ function TaskList() {
 
   useEffect(() => {
     getTasks();
+    fetchUserProjects();
+    fetchCurrentUser();
   }, []);
 
   const addNewButtonClick = () => {
@@ -39,11 +62,18 @@ function TaskList() {
     try {
       const { data } = await axios.post('/api/tasks/', {
         title: newTask,
+        description,
+        timespent: timeSpent,
+        project: selectedProject,
+        user: currentUser._id,
       });
       toast.success('New task added');
       setIsAddingNew(false);
       setNewTask('');
-      setTaskList([{ ...data }, ...taskList]);
+      setTimeSpent(0);
+      setSelectedProject('');
+      setDescription('');
+      setTaskList([...taskList, data]);
     } catch (err) {
       console.log(err);
     }
@@ -62,11 +92,7 @@ function TaskList() {
   return (
     <div>
       <div className={classes.topBar}>
-        <button
-          type="button"
-          className={classes.addNew}
-          onClick={addNewButtonClick}
-        >
+        <button type="button" className={classes.addNew} onClick={addNewButtonClick}>
           Add New
         </button>
       </div>
@@ -77,6 +103,28 @@ function TaskList() {
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
             placeholder="Task name"
+          />
+          <input
+            type="number"
+            value={timeSpent}
+            onChange={(e) => setTimeSpent(e.target.value)}
+            placeholder="Time spent"
+          />
+          <select
+            value={selectedProject}
+            onChange={(e) => setSelectedProject(e.target.value)}
+          >
+            <option value="">Select Project</option>
+            {userProjects.map((project) => (
+              <option key={project._id} value={project._id}>
+                {project.title}
+              </option>
+            ))}
+          </select>
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder="Description"
           />
           <button type="submit">Add</button>
         </form>
