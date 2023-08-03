@@ -1,9 +1,14 @@
 import React from 'react';
+import Layout from '../components/Layout';
+import Navbar from '../components/nav/Navbar';
+import ProjectList from '../components/projects/ProjectList';
 
-function Overview() {
+function Projects() {
   return (
-    <div>Overview</div>
+    <Layout>
+      <Navbar />
+      <ProjectList />
+    </Layout>
   );
 }
-
-export default Overview;
+export default Projects;

@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import Navbar from '../components/nav/Navbar';
 import ProjectList from '../components/projects/ProjectList';
 
-function Home() {
+function Projects() {
   return (
     <Layout>
       <Navbar />
@@ -11,4 +11,4 @@ function Home() {
     </Layout>
   );
 }
-export default Home;
+export default Projects;

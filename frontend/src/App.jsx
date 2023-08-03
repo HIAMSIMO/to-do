@@ -26,13 +26,11 @@ function App() {
         <Route element={<PrivateRoutes />}>
           <Route path="/" element={<Home />} />
           <Route path="/edit-profile" element={<EditProfile />} />
-          {userRole === 'admin' ? (
-            <Routes>
+
               <Route path="/projects" element={<Projects />} />
               <Route path="/overview" element={<Overview />} />
               <Route path="/addUser" element={<AddUser />} />
-            </Routes>
-          ) : null}
+
         </Route>
         <Route path="/auth" element={<Auth />} />
       </Routes>
