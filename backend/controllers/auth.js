@@ -49,13 +49,20 @@ export const login = async (req, res, next) => {
   }
 };
 
+export const isAdmin = (req, res, next) => {
+  if (req.user.role !== 'admin') {
+    return res.status(403).json({ message: 'Forbidden. You are not an admin.' });
+  }
+  next();
+};
+
 export const register = async (req, res, next) => {
-  if (!req.body.name || !req.body.email || !req.body.password) {
+  if (!req.body.name || !req.body.email || !req.body.password || !req.body.role) {
     return next(
       createError({
-        message: 'Name, Email & password are required',
+        message: 'Name, Email, Password, and Role are required',
         statusCode: 400,
-      }),
+      })
     );
   }
 
@@ -67,6 +74,7 @@ export const register = async (req, res, next) => {
       name: req.body.name,
       email: req.body.email,
       password: hashedPassword,
+      role: req.body.role,
     });
 
     await newUser.save();

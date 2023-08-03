@@ -4,6 +4,9 @@ import { Toaster } from 'react-hot-toast';
 import EditProfile from './pages/EditProfile';
 import Home from './pages/Home';
 import Auth from './pages/Auth';
+import Projects from './pages/Projects';
+import Overview from './pages/Overview';
+import AddUser from './pages/AddUser';
 import PrivateRoutes from './components/PrivateRoutes';
 import useAuth from './hooks/useAuth';
 
@@ -24,7 +27,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/edit-profile" element={<EditProfile />} />
           {userRole === 'admin' ? (
-            <Route path="/projects" element={<Projects />} />
+            <Routes>
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/overview" element={<Overview />} />
+              <Route path="/addUser" element={<AddUser />} />
+            </Routes>
           ) : null}
         </Route>
         <Route path="/auth" element={<Auth />} />
