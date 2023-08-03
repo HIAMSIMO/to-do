@@ -49,4 +49,3 @@ function TaskItem({ task, deleteTask }) {
 }
 
 export default TaskItem;
-
