@@ -34,6 +34,10 @@ export const updateProject = async (req, res, next) => {
       return next(createError({ status: 401, message: "You don't have permission to update this project" }));
     }
 
+    const { users } = req.body;
+    
+    project.users = [...new Set([...project.users, ...users])];
+
     const updatedProject = await Project.findByIdAndUpdate(
       req.params.projectId,
       {

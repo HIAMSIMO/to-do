@@ -1,10 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import moment from 'moment';
 import classes from './ProjectItem.module.scss';
 
-function ProjectItem({ project, deleteProject }) {
+function ProjectItem({ project, deleteProject, users }) {
+  const [selectedUsers, setSelectedUsers] = useState([]);
+
+  const handleCheckboxChange = (userId) => {
+    setSelectedUsers((prevSelectedUsers) => {
+      if (prevSelectedUsers.includes(userId)) {
+        return prevSelectedUsers.filter((id) => id !== userId);
+      }
+      return [...prevSelectedUsers, userId];
+    });
+  };
+
+  const handleAddUsers = async (projectId) => {
+    try {
+      await axios.put(`/api/projects/${projectId}/users`, {
+        users: selectedUsers,
+      });
+      toast.success('Users added to project successfully');
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const handleDelete = async () => {
     try {
       await axios.delete(`/api/projects/${project._id}`);
@@ -19,10 +41,19 @@ function ProjectItem({ project, deleteProject }) {
     <tr className={classes.project_item}>
       <td className={classes.project_title}>{project.title}</td>
       <td className={classes.project_description}>{project.description}</td>
-      <td className={classes.project_users}>
-        {project.users.map((user) => (
-          <span key={user._id}>{user.username}</span>
-        ))}
+      <td>
+        <select
+          multiple
+          value={selectedUsers}
+          onChange={(e) => handleCheckboxChange(e.target.value)}
+        >
+          {users.map((user) => (
+            <option key={user._id} value={user._id}>
+              {user.name}
+            </option>
+          ))}
+        </select>
+        <button type="button" onClick={() => handleAddUsers(project._id)}>Add Users</button>
       </td>
       <td className={classes.project_timespent}>
         {project.timespent}

@@ -27,9 +27,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/edit-profile" element={<EditProfile />} />
 
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/overview" element={<Overview />} />
-              <Route path="/addUser" element={<AddUser />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/overview" element={<Overview />} />
+          <Route path="/addUser" element={<AddUser />} />
 
         </Route>
         <Route path="/auth" element={<Auth />} />

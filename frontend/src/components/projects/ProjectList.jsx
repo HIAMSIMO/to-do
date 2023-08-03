@@ -10,6 +10,7 @@ function ProjectList() {
   const [newProject, setNewProject] = useState({ title: '', description: '', users: [] });
   const [userProjects, setUserProjects] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
+  const [allUsers, setAllUsers] = useState([]);
 
   const getProjects = async () => {
     try {
@@ -32,6 +33,15 @@ function ProjectList() {
     }
   };
 
+  const fetchAllUsers = async () => {
+    try {
+      const { data } = await axios.get('/api/users/all');
+      setAllUsers(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const fetchCurrentUser = async () => {
     try {
       const { data } = await axios.get('/api/users/me');
@@ -46,10 +56,21 @@ function ProjectList() {
     fetchCurrentUser();
     fetchUserProjects();
     getProjects();
+    fetchAllUsers();
   }, []);
 
   const addNewButtonClick = () => {
     setIsAddingNew(!isAddingNew);
+  };
+
+  const handleCheckboxChange = (userId) => {
+    setNewProject((prevProject) => {
+      if (prevProject.users.includes(userId)) {
+        return { ...prevProject, users: prevProject.users.filter((id) => id !== userId) };
+      } else {
+        return { ...prevProject, users: [...prevProject.users, userId] };
+      }
+    });
   };
 
   const addNewProject = async (e) => {
@@ -106,6 +127,17 @@ function ProjectList() {
             onChange={(e) => setNewProject({ ...newProject, description: e.target.value })}
             placeholder="Description"
           />
+          <select
+            multiple
+            value={newProject.users}
+            onChange={(e) => handleCheckboxChange(e.target.value)}
+          >
+            {allUsers.map((user) => (
+              <option key={user._id} value={user._id}>
+                {user.name}
+              </option>
+            ))}
+          </select>
           <button type="submit">Add</button>
         </form>
       )}
@@ -113,10 +145,14 @@ function ProjectList() {
         <table className={classes.projectList_table}>
           <tbody>
             {projectList.map((project) => (
-              <ProjectItem key={project._id} project={project} deleteProject={deleteProject} />
+              <ProjectItem
+                key={project._id}
+                project={project}
+                users={allUsers}
+                deleteProject={deleteProject}
+              />
             ))}
           </tbody>
-
         </table>
       ) : (
         'No Projects Found. Create a new project'
