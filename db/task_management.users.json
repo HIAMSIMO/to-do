@@ -1,0 +1,96 @@
+[{
+  "_id": {
+    "$oid": "64cadd1c503614e07ab22f3c"
+  },
+  "name": "test",
+  "email": "test@gamil.com",
+  "password": "$2a$10$f2VVyBE2PoAW2HoVzG5lx.O5wQonW8e2Op63L2f.mVXRcmU5Tbrqe",
+  "role": "user",
+  "createdAt": {
+    "$date": "2023-08-02T22:47:56.836Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-02T22:47:56.836Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64cadd55503614e07ab22f3e"
+  },
+  "name": "admin",
+  "email": "admin@gmail.com",
+  "password": "$2a$10$KJx9qwizRREsK.8SUVtmo.K2yfG/T2p9ybtROOlFjRWbrs1Pf8pxy",
+  "role": "admin",
+  "createdAt": {
+    "$date": "2023-08-02T22:48:53.051Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-02T22:48:53.051Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64cadda1aef6cc86b6cb9019"
+  },
+  "name": "user1",
+  "email": "user1@gmail.com",
+  "password": "$2a$10$81MSZ1irEo/kBMHLIDCgcuR3cMjDfL.o7Uz.6gZXtcthkQASLtDrC",
+  "role": "user",
+  "createdAt": {
+    "$date": "2023-08-02T22:50:09.411Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-02T22:50:09.411Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64cb88f32cb233cacb12cb48"
+  },
+  "name": "user2",
+  "email": "user2@gmail.com",
+  "password": "$2a$10$w/at4g1.YalTjpONASkQUuTTf9JpzwRz.UWiDeOvLujPShho67Esi",
+  "role": "user",
+  "createdAt": {
+    "$date": "2023-08-03T11:01:07.380Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-03T11:01:07.380Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64cbb648c4dddd0f98b663c5"
+  },
+  "name": "Test",
+  "email": "test11@gmail.com",
+  "password": "$2a$10$uGi/0MU/kvTMh2Q7jhA.TOV0c3ZhYwiQt6/mgNLNteSkk.U47yGt.",
+  "role": "user",
+  "createdAt": {
+    "$date": "2023-08-03T14:14:32.025Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-03T14:14:32.025Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64cbba42a96fbd34359cae49"
+  },
+  "name": "admin2",
+  "email": "admin2@gmail.com",
+  "password": "$2a$10$vx1Y98ZAZP5StVCOdZYlvOiIQFkzzN7x9jw0QB7rGg.KryyjMvlGO",
+  "role": "admin",
+  "createdAt": {
+    "$date": "2023-08-03T14:31:30.928Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-03T14:31:30.928Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,187 @@
+[{
+  "_id": {
+    "$oid": "64cb9dbd4ea633cf94d99bff"
+  },
+  "title": "New Project 1",
+  "description": "Project description",
+  "users": [
+    {
+      "$oid": "64cadd1c503614e07ab22f3c"
+    },
+    {
+      "$oid": "64cadda1aef6cc86b6cb9019"
+    }
+  ],
+  "timespent": 0,
+  "createdAt": {
+    "$date": "2023-08-03T12:29:49.233Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-03T12:29:49.233Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64cbf1d28839b824afcb9851"
+  },
+  "title": "New Project 1",
+  "description": "Project description",
+  "users": [
+    {
+      "$oid": "64cb88f32cb233cacb12cb48"
+    }
+  ],
+  "timespent": 0,
+  "createdAt": {
+    "$date": "2023-08-03T18:28:34.442Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-03T18:28:34.442Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64cbf6e7fe8a064d5f0027de"
+  },
+  "title": "New Project 3",
+  "description": "Project description",
+  "users": [
+    {
+      "$oid": "64cb88f32cb233cacb12cb48"
+    }
+  ],
+  "timespent": 0,
+  "createdAt": {
+    "$date": "2023-08-03T18:50:15.321Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-03T18:50:15.321Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64cbf6ebfe8a064d5f0027e0"
+  },
+  "title": "New Project 7",
+  "description": "Project description",
+  "users": [
+    {
+      "$oid": "64cb88f32cb233cacb12cb48"
+    }
+  ],
+  "timespent": 0,
+  "createdAt": {
+    "$date": "2023-08-03T18:50:19.983Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-03T18:50:19.983Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64cc1234a54c4ef6af2a380d"
+  },
+  "title": "hello",
+  "description": "123",
+  "users": [],
+  "timespent": 0,
+  "createdAt": {
+    "$date": "2023-08-03T20:46:44.537Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-03T20:46:44.537Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64cc138aa54c4ef6af2a383f"
+  },
+  "title": "112",
+  "description": "213",
+  "users": [],
+  "timespent": 0,
+  "createdAt": {
+    "$date": "2023-08-03T20:52:26.163Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-03T20:52:26.163Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64cc35997b66d14de7019c63"
+  },
+  "title": "project9",
+  "description": "test",
+  "users": [
+    {
+      "$oid": "64cb88f32cb233cacb12cb48"
+    },
+    {
+      "$oid": "64cadd1c503614e07ab22f3c"
+    },
+    {
+      "$oid": "64cadd55503614e07ab22f3e"
+    },
+    {
+      "$oid": "64cadda1aef6cc86b6cb9019"
+    }
+  ],
+  "timespent": 0,
+  "createdAt": {
+    "$date": "2023-08-03T23:17:45.525Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-03T23:17:45.525Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64cc37187b66d14de7019cb5"
+  },
+  "title": "Project10",
+  "description": "te",
+  "users": [
+    {
+      "$oid": "64cbb648c4dddd0f98b663c5"
+    }
+  ],
+  "timespent": 0,
+  "createdAt": {
+    "$date": "2023-08-03T23:24:08.068Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-03T23:24:08.068Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64cc38a67b66d14de7019cc7"
+  },
+  "title": "123PROJECT",
+  "description": "test",
+  "users": [
+    {
+      "$oid": "64cadd1c503614e07ab22f3c"
+    },
+    {
+      "$oid": "64cadd55503614e07ab22f3e"
+    }
+  ],
+  "timespent": 0,
+  "createdAt": {
+    "$date": "2023-08-03T23:30:46.701Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-03T23:30:46.701Z"
+  },
+  "__v": 0
+}]
