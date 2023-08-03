@@ -34,7 +34,7 @@ function TaskItem({ task, deleteTask }) {
       <td>{isCompleted ? 'Complete' : 'Incomplete'}</td>
       <td>{moment(task.createdAt).format('MMM Do YY')}</td>
       <td>{task.timeSpent}</td>
-      <td>{task.project.title}</td>
+      <td>{task.project.Title}</td>
       <td>
         <button
           type="button"
@@ -49,3 +49,4 @@ function TaskItem({ task, deleteTask }) {
 }
 
 export default TaskItem;
+

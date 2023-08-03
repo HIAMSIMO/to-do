@@ -50,7 +50,7 @@ export const updateProject = async (req, res, next) => {
 
 export const getAllProjects = async (req, res, next) => {
   try {
-    const projects = await Project.find({});
+    const projects = await Project.find({}).populate('tasks');
     return res.status(200).json(projects);
   } catch (err) {
     return next(err);
